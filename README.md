@@ -14,4 +14,5 @@ Ubuntu Touch için gayriresmi Ekşi Sözlük istemcisi - Unofficial [Ekşi Sözl
 [CHANGELOG.md](https://github.com/symbuzzer/ekshi/blob/main/CHANGELOG.md)
 
 ## Download
-Will try to publish on [OpenStore](https://open-store.io) first. Also you can search build artifacts too.
+Note: Trying to publish on [OpenStore](https://open-store.io) first. Also you can search build artifacts too.  
+[![OpenStore](https://open-store.io/badges/en_US.png)](https://open-store.io/app/ekshi.symbuzzer)
