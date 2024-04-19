@@ -1,7 +1,7 @@
 # ekshi  
 Ubuntu Touch için gayriresmi [Ekşi Sözlük](https://eksisozluk.com/)  istemcisi - Unofficial [Ekşi Sözlük](https://eksisozluk.com/) client for Ubuntu Touch
 
-## What is eksisozluk.com?
+## What is Ekşi Sözlük (eksisozluk.com)?
 [Wikipedia](https://en.wikipedia.org/wiki/Ek%C5%9Fi_S%C3%B6zl%C3%BCk)
 
 ## License
