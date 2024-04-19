@@ -1,0 +1,15 @@
+{
+    "name": "ekshi.symbuzzer",
+    "description": "Ubuntu Touch için gayri-resmi ekşi sözlük istemcisi",
+    "architecture": "@CLICK_ARCH@",
+    "title": "ekshi",
+    "hooks": {
+        "ekshi": {
+            "apparmor": "ekshi.apparmor",
+            "desktop":  "ekshi.desktop"
+        }
+    },
+    "version": "1.0.0",
+    "maintainer": "Ali BEYAZ <github.com/symbuzzer>",
+    "framework" : "@CLICK_FRAMEWORK@"
+}
