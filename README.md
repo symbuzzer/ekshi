@@ -1,12 +1,14 @@
 # ekshi  
-Ubuntu Touch için gayriresmi Ekşi Sözlük istemcisi - Unofficial Ekşi Sözlük client for Ubuntu Touch
+Ubuntu Touch için gayriresmi Ekşi Sözlük istemcisi - Unofficial [Ekşi Sözlük](https://eksisozluk.com/) client for Ubuntu Touch
 
 ## What is eksisozluk.com?
 [Wikipedia](https://en.wikipedia.org/wiki/Ek%C5%9Fi_S%C3%B6zl%C3%BCk)
 
 ## License
-The main code is from [Rúben Carneiro](https://gitlab.com/rubencarneiro/)'s [ChatGPT](https://gitlab.com/rubencarneiro/ChatGPT) (for Ubuntu Touch) licensed under GNU General Public License version 3
-I only edited necessary things to run eksisozluk instead chatgpt
+- All rights regarding Ekşi Sözlük ([eksisozluk.com](https://eksisozluk.com/)) belong to Ekşi Teknoloji ve Bilişim A.Ş.
+- The main code of app is from [Rúben Carneiro](https://gitlab.com/rubencarneiro)'s [ChatGPT](https://gitlab.com/rubencarneiro/ChatGPT) app (for Ubuntu Touch) licensed under GNU General Public License version 3
+- Also [build workflow](https://github.com/symbuzzer/ekshi/blob/master/.github/workflows/clickable.yml) is from [Mateo Salta](https://github.com/mateosalta)'s [cuddly-bassoon](https://github.com/mateosalta/cuddly-bassoon) app licensed under licensed under GNU General Public License version 3
+- [logo.png](https://github.com/symbuzzer/ekshi/blob/master/assets/logo.png) is created by a free-to-use AI logo maker app
 
 ## Changelog
 [CHANGELOG.md](https://github.com/symbuzzer/ekshi/blob/main/CHANGELOG.md)
