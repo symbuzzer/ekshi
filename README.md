@@ -1,2 +1,2 @@
 # ekshi  
-Ubuntu Touch için gayri-resmi ekşi sözlük istemcisi
+Ubuntu Touch için gayriresmi ekşi sözlük istemcisi
