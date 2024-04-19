@@ -24,8 +24,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-         build: [Release]
-         arch: [arm64]
+         build: [Release, Debug]
+         arch: [armhf, arm64, amd64]
          version: ['refs/tags/5.2.1-ekshi']
 
     runs-on: ubuntu-20.04
