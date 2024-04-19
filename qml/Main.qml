@@ -47,7 +47,7 @@ MainView {
         anchors.fill: parent
         width: units.gu(45)
         height: units.gu(75)
-        url: "https://eksisozluk.com/basliklar/m/populer"
+        url: "https://eksisozluk.com/"
         zoomFactor: 3.0 //scales the webpage on the device, range allowed from 0.25 to 5.0; the default factor is 1.0
         profile: webViewProfile
     }
