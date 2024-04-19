@@ -5,4 +5,4 @@ Icon=assets/logo.png
 Terminal=false
 Type=Application
 X-Lomiri-Touch=true
-X-Lomiri-Splash-Color=#4ae319 
+X-Lomiri-Splash-Color=#00ff00 
