@@ -1,6 +1,6 @@
 {
     "name": "ekshi.symbuzzer",
-    "description": "Ubuntu Touch için gayriresmi ekşi sözlük istemcisi",
+    "description": "Ubuntu Touch için gayriresmi Ekşi Sözlük istemcisi",
     "architecture": "@CLICK_ARCH@",
     "title": "ekshi",
     "hooks": {
