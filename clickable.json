@@ -1,6 +1,7 @@
 {
-  "builder": "cmake",
+  "builder": "pure-qml-cmake",
   "clickable_minimum_required": "7.1.2",
   "qt_version": "5.12",
-  "kill": "ekshi"
+  "kill": "qmlscene",
+  "framework": "ubuntu-sdk-20.04"
 }
