@@ -58,7 +58,7 @@ MainView {
         persistentCookiesPolicy: WebEngineProfile.ForcePersistentCookies;
         storageName: "Storage"
         httpCacheType: WebEngineProfile.DiskHttpCache; //cache qml content to file
-        httpUserAgent: "Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5735.196 Mobile Safari/537.36";
+        httpUserAgent: "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5735.196 Mobile Safari/537.36";
         property alias dataPath: webViewProfile.persistentStoragePath
         dataPath: dataLocation
         persistentStoragePath: "/home/phablet/.cache/ekshi.symbuzzer/QtWebEngine"
