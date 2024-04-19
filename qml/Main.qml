@@ -50,6 +50,8 @@ MainView {
         url: "https://eksisozluk.com/basliklar/gundem/"
         zoomFactor: 3.0 //scales the webpage on the device, range allowed from 0.25 to 5.0; the default factor is 1.0
         profile: webViewProfile
+        canGoBack: true
+        canGoForward: true
     }
 
     WebEngineProfile {
