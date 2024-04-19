@@ -10,6 +10,6 @@
         }
     },
     "version": "1.0.0",
-    "maintainer": "Ali BEYAZ <github.com/symbuzzer>",
+    "maintainer": "Ali BEYAZ <alipolatbeyaz@gmail.com>",
     "framework" : "@CLICK_FRAMEWORK@"
 }
