@@ -39,7 +39,7 @@ MainView {
 
         header: PageHeader {
             id: header
-            title: i18n.tr('ekshi - eksisozluk.com gayriresmi istemci')
+            title: i18n.tr('ekshi - eksisozluk.com gayriresmi istemcisi')
         }
 
     WebEngineView {
@@ -47,7 +47,7 @@ MainView {
         anchors.fill: parent
         width: units.gu(45)
         height: units.gu(75)
-        url: "https://eksisozluk.com/basliklar/gundem/"
+        url: "https://eksisozluk.com/basliklar/m/populer"
         zoomFactor: 3.0 //scales the webpage on the device, range allowed from 0.25 to 5.0; the default factor is 1.0
         profile: webViewProfile
     }
