@@ -9,7 +9,7 @@
             "desktop":  "ekshi.desktop"
         }
     },
-    "version": "1.0.1",
+    "version": "1.0.2",
     "maintainer": "Ali BEYAZ <alipolatbeyaz@gmail.com>",
     "framework" : "@CLICK_FRAMEWORK@"
 }
