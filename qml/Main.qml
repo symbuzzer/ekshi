@@ -28,7 +28,6 @@ import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
 import QtWebEngine 1.7
 
-
 MainView {
     id: root
     objectName: 'mainView'
@@ -43,61 +42,66 @@ MainView {
         header: PageHeader {
             id: header
             title: i18n.tr('ekshi')
+            leadingActions: [
+                Action {
+                    iconSource: "assets/back.png"
+                    onTriggered: webview.goBack()
+                },
+                Action {
+                    iconSource: "assets/forward.png"
+                    onTriggered: webview.goForward()
+                }
+            ]
+            trailingActions: [
+                Action {
+                    iconSource: "assets/refresh.png"
+                    onTriggered: webview.reload()
+                }
+            ]
         }
 
-    WebEngineView {
-        id: webview
-        anchors.fill: parent
-        width: units.gu(45)
-        height: units.gu(75)
-        url: "https://eksisozluk.com/"
-        zoomFactor: 3.0 //scales the webpage on the device, range allowed from 0.25 to 5.0; the default factor is 1.0
-        profile: webViewProfile
-    }
-
-    WebEngineProfile {
-        //for more profile options see https://doc.qt.io/qt-5/qml-qtwebengine-webengineprofile.html
-        id: webViewProfile
-        persistentCookiesPolicy: WebEngineProfile.ForcePersistentCookies;
-        storageName: "Storage"
-        httpCacheType: WebEngineProfile.DiskHttpCache; //cache qml content to file
-        httpUserAgent: "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5735.196 Mobile Safari/537.36";
-        property alias dataPath: webViewProfile.persistentStoragePath
-        dataPath: dataLocation
-        persistentStoragePath: "/home/phablet/.cache/ekshi.symbuzzer/QtWebEngine"
-
-    }
-
-    ProgressBar {
-        id: loadingIndicator
-        anchors {
-            top: parent.top
-            left: parent.left
-            right: parent.right
+        WebEngineView {
+            id: webview
+            anchors.fill: parent
+            width: units.gu(45)
+            height: units.gu(75)
+            url: "https://eksisozluk.com/"
+            zoomFactor: 3.0
+            profile: webViewProfile
         }
-        //aquire the webviews loading progress for the indicators value
-        value: webview.loadProgress/100
-        //hide loadingIndicator when page has been loaded successfully
-        visible: webview.loadProgress === 100 ? false : true
-    }
 
-    Rectangle {
-        //show placeholder while the page is loading to avoid ugly flickering of webview
-        id: webViewPlaceholder
-        anchors {
-            top: loadingIndicator.bottom
-            left: parent.left
-            right: parent.right
-            bottom: parent.bottom
+        WebEngineProfile {
+            id: webViewProfile
+            persistentCookiesPolicy: WebEngineProfile.ForcePersistentCookies;
+            storageName: "Storage"
+            httpCacheType: WebEngineProfile.DiskHttpCache;
+            httpUserAgent: "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5735.196 Mobile Safari/537.36";
+            property alias dataPath: webViewProfile.persistentStoragePath
+            dataPath: dataLocation
+            persistentStoragePath: "/home/phablet/.cache/ekshi.symbuzzer/QtWebEngine"
         }
-        z: 1
-        color: Suru.backgroundColor
-        visible: webview.loadProgress === 100 ? false : true
 
-        BusyIndicator {
-            id: busy
-            anchors.centerIn: parent
+        ProgressBar {
+            id: loadingIndicator
+            anchors {
+                top: parent.top
+                left: parent.left
+                right: parent.right
+            }
+            value: webview.loadProgress / 100
+            visible: webview.loadProgress !== 100
+        }
 
+        Rectangle {
+            id: webViewPlaceholder
+            anchors.fill: parent
+            z: 1
+            color: Suru.backgroundColor
+            visible: webview.loadProgress !== 100
+
+            BusyIndicator {
+                id: busy
+                anchors.centerIn: parent
             }
         }
     }
