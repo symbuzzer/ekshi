@@ -9,86 +9,82 @@ import QtWebEngine 1.7
 import Ubuntu.Components 1.3
 
 MainView {
-    id: root
-    objectName: 'mainView'
-    applicationName: 'ekshi.symbuzzer'
+  id: root
+  objectName: 'mainView'
+  applicationName: 'ekshi.symbuzzer'
 
-    width: units.gu(45)
-    height: units.gu(75)
+  width: units.gu(45)
+  height: units.gu(75)
 
-    Page {
-        anchors.fill: parent
-        
-        // Custom header using a Rectangle and ToolButtons
-        Rectangle {
-            id: customHeader
-            width: parent.width
-            height: units.gu(6)
-            color: "#f0f0f0" // Example color
-            
-            Row {
-                spacing: units.gu(1)
-                anchors.fill: parent
-                anchors.horizontalCenter: parent.horizontalCenter
-                
-                ToolButton {
-                    text: "Back"
-                    onClicked: webview.goBack()
-                }
-                ToolButton {
-                    text: "Forward"
-                    onClicked: webview.goForward()
-                }
-                ToolButton {
-                    text: "Refresh"
-                    onClicked: webview.reload()
-                }
-            }
-        }
+  Page {
+    anchors.fill: parent
 
-        WebEngineView {
-            id: webview
-            anchors.fill: parent
-            width: units.gu(45)
-            height: units.gu(75)
-            url: "https://eksisozluk.com/"
-            zoomFactor: 3.0
-            profile: webViewProfile
-        }
+    header: Toolbar {
+      id: header
+      title: i18n.tr('ekshi')
 
-        WebEngineProfile {
-            id: webViewProfile
-            persistentCookiesPolicy: WebEngineProfile.ForcePersistentCookies
-            storageName: "Storage"
-            httpCacheType: WebEngineProfile.DiskHttpCache
-            httpUserAgent: "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5735.196 Mobile Safari/537.36"
-            property alias dataPath: webViewProfile.persistentStoragePath
-            dataPath: dataLocation
-            persistentStoragePath: "/home/phablet/.cache/ekshi.symbuzzer/QtWebEngine"
-        }
+      // Add navigation buttons
+      LeftButton {
+        iconName: "back" // Assuming you have an icon for back navigation
+        onClicked: webview.back()
+        enabled: webview.canGoBack()
+      }
 
-        ProgressBar {
-            id: loadingIndicator
-            anchors {
-                top: parent.top
-                left: parent.left
-                right: parent.right
-            }
-            value: webview.loadProgress / 100
-            visible: webview.loadProgress !== 100
-        }
+      RightButton {
+        iconName: "next" // Assuming you have an icon for forward navigation
+        onClicked: webview.forward()
+        enabled: webview.canGoForward()
+      }
 
-        Rectangle {
-            id: webViewPlaceholder
-            anchors.fill: parent
-            z: 1
-            color: Suru.backgroundColor
-            visible: webview.loadProgress !== 100
-
-            BusyIndicator {
-                id: busy
-                anchors.centerIn: parent
-            }
-        }
+      // Add a refresh button
+      RightButton {
+        iconName: "reload" // Assuming you have an icon for refresh
+        onClicked: webview.reload()
+      }
     }
+
+    WebEngineView {
+      id: webview
+      anchors.fill: parent
+      width: units.gu(45)
+      height: units.gu(75)
+      url: "https://eksisozluk.com/"
+      zoomFactor: 3.0
+      profile: webViewProfile
+    }
+
+    WebEngineProfile {
+      id: webViewProfile
+      // ... other profile options
+    }
+
+    ProgressBar {
+      id: loadingIndicator
+      anchors {
+        top: parent.top
+        left: parent.left
+        right: parent.right
+      }
+      value: webview.loadProgress / 100
+      visible: webview.loadProgress === 100 ? false : true
+    }
+
+    Rectangle {
+      id: webViewPlaceholder
+      anchors {
+        top: loadingIndicator.bottom
+        left: parent.left
+        right: parent.right
+        bottom: parent.bottom
+      }
+      z: 1
+      color: Suru.backgroundColor
+      visible: webview.loadProgress === 100 ? false : true
+
+      BusyIndicator {
+        id: busy
+        anchors.centerIn: parent
+      }
+    }
+  }
 }
