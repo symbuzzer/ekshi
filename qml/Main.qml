@@ -22,18 +22,19 @@ MainView {
         header: PageHeader {
             id: header
             title: i18n.tr('ekshi')
-            leadingActionBar: ActionBar {
-                Action {
+            tools: Row {
+                spacing: units.gu(1)
+                ToolButton {
                     text: "Back"
-                    onTriggered: webview.goBack()
+                    onClicked: webview.goBack()
                 }
-                Action {
+                ToolButton {
                     text: "Forward"
-                    onTriggered: webview.goForward()
+                    onClicked: webview.goForward()
                 }
-                Action {
+                ToolButton {
                     text: "Refresh"
-                    onTriggered: webview.reload()
+                    onClicked: webview.reload()
                 }
             }
         }
