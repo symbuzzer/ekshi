@@ -42,7 +42,7 @@ MainView {
 
         header: PageHeader {
             id: header
-            title: i18n.tr('ekshi - eksisozluk.com gayriresmi istemcisi')
+            title: i18n.tr('ekshi')
         }
 
     WebEngineView {
