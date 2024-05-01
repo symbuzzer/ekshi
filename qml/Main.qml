@@ -1,24 +1,3 @@
-/*
- * Copyright (C) 2023  Rúben Carneiro
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; version 3.
- *
- * chatgpt is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-
-/*
- * Modified for ekshi app by Ali BEYAZ under GNU GPL v3
- */
-
-
 import QtQuick 2.7
 import Lomiri.Components 1.3
 import QtQuick.Controls 2.2
@@ -27,6 +6,7 @@ import Morph.Web 0.1
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
 import QtWebEngine 1.7
+import Ubuntu.Components 1.3
 
 MainView {
     id: root
@@ -43,18 +23,18 @@ MainView {
             id: header
             title: i18n.tr('ekshi')
             leadingActions: [
-                Action {
-                    iconSource: "assets/back.png"
+                ActionItem {
+                    iconSource: "image://theme/go-previous"
                     onTriggered: webview.goBack()
                 },
-                Action {
-                    iconSource: "assets/forward.png"
+                ActionItem {
+                    iconSource: "image://theme/go-next"
                     onTriggered: webview.goForward()
                 }
             ]
             trailingActions: [
-                Action {
-                    iconSource: "assets/refresh.png"
+                ActionItem {
+                    iconSource: "image://theme/reload"
                     onTriggered: webview.reload()
                 }
             ]
@@ -72,10 +52,10 @@ MainView {
 
         WebEngineProfile {
             id: webViewProfile
-            persistentCookiesPolicy: WebEngineProfile.ForcePersistentCookies;
+            persistentCookiesPolicy: WebEngineProfile.ForcePersistentCookies
             storageName: "Storage"
-            httpCacheType: WebEngineProfile.DiskHttpCache;
-            httpUserAgent: "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5735.196 Mobile Safari/537.36";
+            httpCacheType: WebEngineProfile.DiskHttpCache
+            httpUserAgent: "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5735.196 Mobile Safari/537.36"
             property alias dataPath: webViewProfile.persistentStoragePath
             dataPath: dataLocation
             persistentStoragePath: "/home/phablet/.cache/ekshi.symbuzzer/QtWebEngine"
