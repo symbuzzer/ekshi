@@ -22,22 +22,20 @@ MainView {
         header: PageHeader {
             id: header
             title: i18n.tr('ekshi')
-            leadingActions: [
-                ActionItem {
-                    iconSource: "image://theme/go-previous"
+            leadingActionBar: ActionBar {
+                Action {
+                    text: "Back"
                     onTriggered: webview.goBack()
-                },
-                ActionItem {
-                    iconSource: "image://theme/go-next"
+                }
+                Action {
+                    text: "Forward"
                     onTriggered: webview.goForward()
                 }
-            ]
-            trailingActions: [
-                ActionItem {
-                    iconSource: "image://theme/reload"
+                Action {
+                    text: "Refresh"
                     onTriggered: webview.reload()
                 }
-            ]
+            }
         }
 
         WebEngineView {
