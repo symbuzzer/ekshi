@@ -18,12 +18,19 @@ MainView {
 
     Page {
         anchors.fill: parent
-
-        header: PageHeader {
-            id: header
-            title: i18n.tr('ekshi')
-            tools: Row {
+        
+        // Custom header using a Rectangle and ToolButtons
+        Rectangle {
+            id: customHeader
+            width: parent.width
+            height: units.gu(6)
+            color: "#f0f0f0" // Example color
+            
+            Row {
                 spacing: units.gu(1)
+                anchors.fill: parent
+                anchors.horizontalCenter: parent.horizontalCenter
+                
                 ToolButton {
                     text: "Back"
                     onClicked: webview.goBack()
